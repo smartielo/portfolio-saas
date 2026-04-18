@@ -1,59 +1,54 @@
-# PortfolioSaas
+# 🚀 Mini SaaS Factory | Portfolio Hub
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.7.
+[PT-BR] Um portfólio de alta performance desenvolvido em Angular para expor uma coleção de sistemas e mini SaaS. O projeto foca em uma experiência de usuário fluida, inspirada em estéticas de design premium (Awwwards style), utilizando animações avançadas e uma arquitetura moderna containerizada.
 
-## Development server
+[EN] A high-performance portfolio developed in Angular to showcase a collection of systems and mini SaaS products. The project focuses on a fluid user experience, inspired by premium design aesthetics (Awwwards style), utilizing advanced animations and a modern containerized architecture.
 
-To start a local development server, run:
+## 🛠️ Tech Stack
 
-```bash
-ng serve
-```
+* **Frontend:** Angular 19+, Tailwind CSS v4, GSAP (Animations), Lenis (Smooth Scroll).
+* **Backend:** Python (FastAPI/Flask) - *Planned for upcoming SaaS integrations*.
+* **DevOps:** Docker & Docker Compose.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## 💡 Planned Mini SaaS Projects
 
-## Code scaffolding
+1.  **MotorCalc:** SaaS for automotive financing simulations and CRM.
+2.  **TaxFolio:** Financial management and tax calculator for investors.
+3.  **ArenaMatch:** Sports league management and tournament organizer.
+4.  **DocuBabel:** AI-powered bilingual documentation synchronization tool.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## 🚀 How to Run (Local)
 
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
+Para rodar o projeto localmente, você só precisa do Docker instalado:
+To run the project locally, you only need Docker installed:
 
 ```bash
-ng build
+docker compose up --build]
 ```
+**Acesse em / Access at: http://127.0.0.1:4200**
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+---
 
-## Running unit tests
+### Subindo para o GitHub
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+Agora, abra uma **nova aba** no seu terminal do VS Code (para não parar o container que está rodando) e execute os comandos abaixo para inicializar o repositório e fazer o primeiro push:
 
-```bash
-ng test
-```
+1.  **Inicialize o Git:**
+    ```bash
+    git init
+    ```
 
-## Running end-to-end tests
+2.  **Adicione os arquivos e faça o primeiro commit:**
+    ```bash
+    git add .
+    git commit -m "feat: initial project setup with angular 19, docker and tailwind v4"
+    ```
 
-For end-to-end (e2e) testing, run:
+3.  **Crie um repositório no seu GitHub** chamado `portfolio-saas` (ou o nome que preferir) e conecte ele:
+    ```bash
+    git remote add origin https://github.com/smartielo/portfolio-saas.git
+    git branch -M main
+    git push -u origin main
+    ```
 
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+---
