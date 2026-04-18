@@ -1,5 +1,22 @@
 @use "tailwindcss";
+@import "tailwindcss";
 
 body {
-  @apply bg-zinc-950 text-zinc-50 m-0 p-0 overflow-x-hidden;
+  @apply m-0 p-0 antialiased;
+}
+
+:root {
+  --background: #09090b; /* zinc-950 */
+  --foreground: #fafafa; /* zinc-50 */
+}
+
+.light {
+  --background: #ffffff;
+  --foreground: #09090b;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  transition: background-color 0.5s ease;
 }

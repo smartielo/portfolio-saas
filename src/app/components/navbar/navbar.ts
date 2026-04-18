@@ -1,33 +1,55 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core'; // Importe o inject
 import { CommonModule } from '@angular/common';
+import { SettingsService } from '../../services/settings';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
   imports: [CommonModule],
   template: `
-    <header class="fixed top-0 left-0 w-full z-50 px-6 py-6 flex items-center justify-center">
+    <header class="fixed top-0 left-0 w-full z-50 px-6 py-8 flex items-center justify-center pointer-events-none">
       
-      <nav class="bg-zinc-900/40 backdrop-blur-md border border-white/10 rounded-full px-8 py-3 flex items-center gap-10 shadow-2xl transition-all duration-300">
+      <nav class="pointer-events-auto bg-zinc-100/10 dark:bg-zinc-900/40 backdrop-blur-xl border border-white/10 rounded-full px-8 py-3 flex items-center gap-8 shadow-2xl">
         
-        <a href="#" class="text-zinc-50 font-bold tracking-widest text-sm uppercase hover:text-white transition-colors">
-          GM.
-        </a>
+        <a href="#" class="text-zinc-50 font-black tracking-tighter text-lg mr-4">GM.</a>
         
-        <div class="hidden md:flex items-center gap-8">
-          <a href="#produtos" class="text-xs font-medium text-zinc-400 hover:text-white uppercase tracking-widest transition-colors">Produtos</a>
-          <a href="#stack" class="text-xs font-medium text-zinc-400 hover:text-white uppercase tracking-widest transition-colors">Stack</a>
-          <a href="#sobre" class="text-xs font-medium text-zinc-400 hover:text-white uppercase tracking-widest transition-colors">Sobre</a>
+        <div class="hidden md:flex items-center gap-6">
+          <a href="#produtos" class="text-[10px] uppercase tracking-[0.2em] font-bold text-zinc-400 hover:text-white transition-colors">Produtos</a>
+          <a href="#stack" class="text-[10px] uppercase tracking-[0.2em] font-bold text-zinc-400 hover:text-white transition-colors">Stack</a>
+          <a href="#sobre" class="text-[10px] uppercase tracking-[0.2em] font-bold text-zinc-400 hover:text-white transition-colors">Sobre</a>
         </div>
 
-        <a href="#contato" class="text-xs font-bold bg-zinc-50 text-zinc-950 px-5 py-2.5 rounded-full hover:bg-zinc-300 hover:scale-105 active:scale-95 transition-all duration-300">
-          Let's Talk
-        </a>
-        
+        <div class="h-4 w-[1px] bg-white/10 mx-2"></div>
+
+        <a href="#contato" class="text-[10px] uppercase tracking-[0.2em] font-black text-white hover:opacity-70 transition-opacity">Talk</a>
       </nav>
-      
+
     </header>
+
+    <div class="fixed top-8 right-8 z-[60] flex items-center gap-4">
+      
+      <button (click)="settings.toggleTheme()" 
+              class="w-12 h-6 bg-zinc-800 border border-white/10 rounded-full p-1 flex items-center cursor-pointer hover:border-white/40 transition-all">
+        <div class="w-4 h-4 bg-white rounded-full transition-transform duration-500 shadow-[0_0_10px_rgba(255,255,255,0.5)]"
+             [style.transform]="settings.darkMode() ? 'translateX(24px)' : 'translateX(0px)'">
+        </div>
+      </button>
+
+      <button (click)="settings.toggleLanguage()" 
+              class="bg-zinc-800 border border-white/10 rounded-full px-4 py-2 flex items-center gap-2 cursor-pointer hover:border-white/40 transition-all">
+        <span class="text-[9px] font-bold tracking-widest uppercase transition-opacity"
+              [class.text-white]="settings.language() === 'br'"
+              [class.opacity-20]="settings.language() !== 'br'">BR</span>
+        <div class="w-[1px] h-2 bg-white/20"></div>
+        <span class="text-[9px] font-bold tracking-widest uppercase transition-opacity"
+              [class.text-white]="settings.language() === 'en'"
+              [class.opacity-20]="settings.language() !== 'en'">EN</span>
+      </button>
+
+    </div>
   `,
-  styles: []
+  styles: [],
 })
-export class NavbarComponent {}
+export class NavbarComponent {
+  public settings = inject(SettingsService);
+}
