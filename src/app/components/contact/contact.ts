@@ -19,13 +19,13 @@ import { SettingsService } from '../../services/settings';
         </h3>
 
         <div class="flex flex-col md:flex-row gap-6 mb-24">
-          <a href="mailto:seu-email@gmail.com" class="px-8 py-4 bg-white text-zinc-950 font-bold uppercase tracking-widest text-xs rounded-full hover:bg-zinc-300 transition-colors">
+          <a href="mailto:gabrielmartielo3214l@gmail.com" class="px-8 py-4 bg-white text-zinc-950 font-bold uppercase tracking-widest text-xs rounded-full hover:bg-zinc-300 transition-colors">
             {{ settings.language() === 'en' ? 'Send an Email' : 'Enviar um Email' }}
           </a>
-          <a href="#" class="px-8 py-4 border border-white/20 text-white font-bold uppercase tracking-widest text-xs rounded-full hover:bg-white/10 transition-colors">
+          <a href="https://www.linkedin.com/in/gabrielmartielo" target="_blank" class="px-8 py-4 border border-white/20 text-white font-bold uppercase tracking-widest text-xs rounded-full hover:bg-white/10 transition-colors">
             LinkedIn
           </a>
-          <a href="#" class="px-8 py-4 border border-white/20 text-white font-bold uppercase tracking-widest text-xs rounded-full hover:bg-white/10 transition-colors">
+          <a href="https://github.com/smartielo" target="_blank" class="px-8 py-4 border border-white/20 text-white font-bold uppercase tracking-widest text-xs rounded-full hover:bg-white/10 transition-colors">
             GitHub
           </a>
         </div>
