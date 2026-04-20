@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core'; // Importe o inject
 import { CommonModule } from '@angular/common';
 import { SettingsService } from '../../services/settings';
+import Lenis from 'lenis';
 
 @Component({
   selector: 'app-navbar',
@@ -49,4 +50,17 @@ import { SettingsService } from '../../services/settings';
 })
 export class NavbarComponent {
   public settings = inject(SettingsService);
+
+  // Método para rolagem suave interceptando o clique padrão
+  scrollTo(target: string, event: Event) {
+    event.preventDefault(); // Evita que a URL dê um "pulo" instantâneo
+    
+    // Procura a seção na tela (ex: #produtos)
+    const element = document.querySelector(target);
+    
+    if (element) {
+      // O navegador tenta rolar, e o Lenis entra em ação deixando suave
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
 }
