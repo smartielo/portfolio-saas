@@ -19,18 +19,25 @@ import { SettingsService } from '../../services/settings';
         
         <div class="flex flex-nowrap whitespace-nowrap animate-marquee items-center gap-16 py-4">
           <ng-container *ngFor="let item of [1, 2]">
-            <span class="text-4xl md:text-6xl font-black text-zinc-300 dark:text-zinc-800 uppercase tracking-tighter hover:text-zinc-900 dark:hover:text-white transition-colors duration-300 cursor-default">Kotlin</span>
+            
+            <span class="text-4xl md:text-6xl font-black text-zinc-300 dark:text-zinc-800 uppercase tracking-tighter hover:text-[#7F52FF] dark:hover:text-[#7F52FF] transition-colors duration-300 cursor-default">Kotlin</span>
             <span class="text-zinc-300 dark:text-zinc-700 text-3xl">/</span>
-            <span class="text-4xl md:text-6xl font-black text-zinc-300 dark:text-zinc-800 uppercase tracking-tighter hover:text-zinc-900 dark:hover:text-white transition-colors duration-300 cursor-default">Python</span>
+            
+            <span class="text-4xl md:text-6xl font-black text-zinc-300 dark:text-zinc-800 uppercase tracking-tighter hover:text-[#FFD43B] dark:hover:text-[#FFD43B] transition-colors duration-300 cursor-default">Python</span>
             <span class="text-zinc-300 dark:text-zinc-700 text-3xl">/</span>
-            <span class="text-4xl md:text-6xl font-black text-zinc-300 dark:text-zinc-800 uppercase tracking-tighter hover:text-zinc-900 dark:hover:text-white transition-colors duration-300 cursor-default">Angular</span>
+            
+            <span class="text-4xl md:text-6xl font-black text-zinc-300 dark:text-zinc-800 uppercase tracking-tighter hover:text-[#DD0031] dark:hover:text-[#DD0031] transition-colors duration-300 cursor-default">Angular</span>
             <span class="text-zinc-300 dark:text-zinc-700 text-3xl">/</span>
-            <span class="text-4xl md:text-6xl font-black text-zinc-300 dark:text-zinc-800 uppercase tracking-tighter hover:text-zinc-900 dark:hover:text-white transition-colors duration-300 cursor-default">Next.js</span>
+            
+            <span class="text-4xl md:text-6xl font-black text-zinc-300 dark:text-zinc-800 uppercase tracking-tighter hover:text-black dark:hover:text-white transition-colors duration-300 cursor-default">Next.js</span>
             <span class="text-zinc-300 dark:text-zinc-700 text-3xl">/</span>
-            <span class="text-4xl md:text-6xl font-black text-zinc-300 dark:text-zinc-800 uppercase tracking-tighter hover:text-zinc-900 dark:hover:text-white transition-colors duration-300 cursor-default">Flutter</span>
+            
+            <span class="text-4xl md:text-6xl font-black text-zinc-300 dark:text-zinc-800 uppercase tracking-tighter hover:text-[#02569B] dark:hover:text-[#02569B] transition-colors duration-300 cursor-default">Flutter</span>
             <span class="text-zinc-300 dark:text-zinc-700 text-3xl">/</span>
-            <span class="text-4xl md:text-6xl font-black text-zinc-300 dark:text-zinc-800 uppercase tracking-tighter hover:text-zinc-900 dark:hover:text-white transition-colors duration-300 cursor-default">Docker</span>
+            
+            <span class="text-4xl md:text-6xl font-black text-zinc-300 dark:text-zinc-800 uppercase tracking-tighter hover:text-[#2496ED] dark:hover:text-[#2496ED] transition-colors duration-300 cursor-default">Docker</span>
             <span class="text-zinc-300 dark:text-zinc-700 text-3xl">/</span>
+            
           </ng-container>
         </div>
         
