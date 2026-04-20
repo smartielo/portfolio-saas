@@ -33,7 +33,7 @@ export class App implements AfterViewInit {
         gsap.to('#custom-cursor', {
           x: e.clientX,
           y: e.clientY,
-          duration: 0.1,
+          duration: 0.05, // Deixei mais rápido para parecer nativo
           ease: 'power2.out'
         });
       });

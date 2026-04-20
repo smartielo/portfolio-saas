@@ -2,7 +2,12 @@
 
 <div class="fixed inset-0 pointer-events-none z-[-1] bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
 <div class="fixed inset-0 pointer-events-none z-[100] opacity-[0.03] mix-blend-overlay bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
-<div id="custom-cursor" class="fixed top-0 left-0 w-4 h-4 bg-white dark:bg-zinc-50 rounded-full mix-blend-difference pointer-events-none z-[9999] opacity-0 md:opacity-100 -translate-x-1/2 -translate-y-1/2"></div>
+
+<div id="custom-cursor" class="fixed top-0 left-0 w-7 h-7 mix-blend-difference pointer-events-none z-[9999] hidden md:block">
+  <svg viewBox="0 0 24 24" fill="white" class="w-full h-full drop-shadow-sm">
+    <path d="M4 2.5L18 11.5L11.5 13L14 19.5L11 20.5L8.5 14L3 18V2.5Z" stroke="black" stroke-width="0.5" stroke-linejoin="round"/>
+  </svg>
+</div>
 
 <main class="min-h-screen w-full selection:bg-zinc-800 selection:text-zinc-50">
   <app-hero></app-hero>

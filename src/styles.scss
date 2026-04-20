@@ -22,3 +22,10 @@ body {
   color: var(--foreground);
   transition: background-color 0.5s ease;
 }
+
+/* Oculta o cursor padrão apenas em telas de computador (onde o hover existe) */
+@media (min-width: 768px) {
+  *, *::before, *::after {
+    cursor: none !important;
+  }
+}
