@@ -1,8 +1,10 @@
 @use "tailwindcss";
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 body {
-  @apply m-0 p-0 antialiased;
+  @apply m-0 p-0 antialiased overflow-x-hidden;
 }
 
 :root {

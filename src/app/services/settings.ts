@@ -12,10 +12,8 @@ export class SettingsService {
     this.darkMode.set(!this.darkMode());
     
     if (this.darkMode()) {
-      // Se estiver no modo escuro, adicionamos a classe 'dark'
       document.documentElement.classList.add('dark');
     } else {
-      // Se estiver no modo claro, removemos a classe 'dark'
       document.documentElement.classList.remove('dark');
     }
   }
