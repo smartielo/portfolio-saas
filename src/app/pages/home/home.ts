@@ -5,7 +5,9 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Lenis from 'lenis';
 import { AboutComponent } from '../../components/about/about';
 import { ContactComponent } from '../../components/contact/contact';
+import { CommandPaletteComponent } from '../../components/command-palette/command-palette';
 import { HeroComponent } from '../../components/hero/hero';
+import { LabsComponent } from '../../components/labs/labs';
 import { NavbarComponent } from '../../components/navbar/navbar';
 import { ProductsComponent } from '../../components/products/products';
 import { StackComponent } from '../../components/stack/stack';
@@ -13,9 +15,10 @@ import { StackComponent } from '../../components/stack/stack';
 @Component({
   selector: 'app-home-page',
   standalone: true,
-  imports: [NavbarComponent, HeroComponent, ProductsComponent, StackComponent, AboutComponent, ContactComponent],
+  imports: [NavbarComponent, CommandPaletteComponent, HeroComponent, ProductsComponent, LabsComponent, StackComponent, AboutComponent, ContactComponent],
   template: `
     <app-navbar></app-navbar>
+    <app-command-palette></app-command-palette>
 
     <div class="fixed inset-0 pointer-events-none z-[-1] bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
     <div class="fixed inset-0 pointer-events-none z-[100] opacity-[0.03] mix-blend-overlay bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
@@ -29,6 +32,7 @@ import { StackComponent } from '../../components/stack/stack';
     <main id="top" class="min-h-screen w-full selection:bg-zinc-800 selection:text-zinc-50">
       <app-hero></app-hero>
       <app-products></app-products>
+      <app-labs></app-labs>
       <app-stack></app-stack>
       <app-about></app-about>
       <app-contact></app-contact>

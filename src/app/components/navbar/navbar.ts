@@ -15,6 +15,7 @@ import { SettingsService } from '../../services/settings';
         
         <div class="hidden md:flex items-center gap-6">
           <a href="#produtos" (click)="scrollTo('#produtos', $event)" class="text-[10px] uppercase tracking-[0.2em] font-bold text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Produtos</a>
+          <a href="#labs" (click)="scrollTo('#labs', $event)" class="text-[10px] uppercase tracking-[0.2em] font-bold text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Labs</a>
           <a href="#stack" (click)="scrollTo('#stack', $event)" class="text-[10px] uppercase tracking-[0.2em] font-bold text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Stack</a>
           <a href="#sobre" (click)="scrollTo('#sobre', $event)" class="text-[10px] uppercase tracking-[0.2em] font-bold text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Sobre</a>
         </div>
