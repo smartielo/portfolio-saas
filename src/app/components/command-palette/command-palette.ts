@@ -44,7 +44,7 @@ type OpenOptions = {
           <div role="dialog" aria-modal="true" aria-label="Quick Menu">
             <div class="px-4 py-3 border-b border-white/10 flex items-center justify-between gap-3">
               <p class="text-xs uppercase tracking-[0.2em] text-zinc-400 font-semibold">Quick Menu</p>
-              <p class="text-[10px] text-zinc-500">Ctrl/Cmd + K</p>
+              <p class="hidden md:block text-[10px] text-zinc-500">Ctrl/Cmd + K</p>
             </div>
 
             <div class="px-4 py-3 border-b border-white/10">
@@ -117,15 +117,15 @@ type OpenOptions = {
       }
 
       <div
-        class="pointer-events-auto ml-auto inline-flex items-center gap-2 rounded-full border border-white/10 bg-zinc-900/85 backdrop-blur-md px-3 py-2 shadow-2xl cursor-pointer hover:bg-zinc-800/90 transition-colors"
+        class="pointer-events-auto ml-auto inline-flex items-center gap-2 rounded-full border border-white/10 bg-zinc-900/85 backdrop-blur-md px-2.5 md:px-3 py-2 shadow-2xl cursor-pointer hover:bg-zinc-800/90 transition-colors"
         (click)="toggle({ focusSearch: false })"
         [attr.aria-expanded]="isOpen"
         [class.opacity-70]="isAnimating"
         aria-label="Abrir quick menu"
         >
         <span class="inline-flex h-7 w-7 items-center justify-center rounded-full bg-zinc-800 text-zinc-100">⌘</span>
-        <span class="text-sm font-semibold tracking-tight text-zinc-100">Command</span>
-        <span class="text-[10px] text-zinc-400 border border-white/10 rounded-md px-1.5 py-0.5">K</span>
+        <span class="hidden md:inline text-sm font-semibold tracking-tight text-zinc-100">Command</span>
+        <span class="hidden md:inline text-[10px] text-zinc-400 border border-white/10 rounded-md px-1.5 py-0.5">K</span>
       </div>
     </div>
   `,
