@@ -20,6 +20,10 @@ type CommandItem = {
   external?: boolean;
 };
 
+type OpenOptions = {
+  focusSearch: boolean;
+};
+
 @Component({
   selector: 'app-command-palette',
   standalone: true,
@@ -114,7 +118,7 @@ type CommandItem = {
 
       <div
         class="pointer-events-auto ml-auto inline-flex items-center gap-2 rounded-full border border-white/10 bg-zinc-900/85 backdrop-blur-md px-3 py-2 shadow-2xl cursor-pointer hover:bg-zinc-800/90 transition-colors"
-        (click)="toggle()"
+        (click)="toggle({ focusSearch: false })"
         [attr.aria-expanded]="isOpen"
         [class.opacity-70]="isAnimating"
         aria-label="Abrir quick menu"
@@ -235,13 +239,13 @@ export class CommandPaletteComponent implements OnInit, OnDestroy {
 
     if (isCmdOrCtrlK) {
       event.preventDefault();
-      this.toggle();
+      this.toggle({ focusSearch: true });
       return;
     }
 
     if (!this.isOpen && isSlash && !this.isTypingContext(event)) {
       event.preventDefault();
-      this.open();
+      this.open({ focusSearch: true });
       return;
     }
 
@@ -276,10 +280,12 @@ export class CommandPaletteComponent implements OnInit, OnDestroy {
     }
   }
 
-  open(): void {
+  open(options?: Partial<OpenOptions>): void {
     if (this.isAnimating || this.isOpen) {
       return;
     }
+
+    const focusSearch = options?.focusSearch ?? this.shouldAutoFocus();
 
     this.isAnimating = true;
     this.isMounted = true;
@@ -288,7 +294,9 @@ export class CommandPaletteComponent implements OnInit, OnDestroy {
     this.lockBodyScroll();
 
     setTimeout(() => {
-      this.inputRef?.nativeElement.focus();
+      if (focusSearch) {
+        this.inputRef?.nativeElement.focus();
+      }
       this.animateIn();
     }, 0);
   }
@@ -364,12 +372,12 @@ export class CommandPaletteComponent implements OnInit, OnDestroy {
     this.unlockBodyScroll();
   }
 
-  toggle(): void {
+  toggle(options?: Partial<OpenOptions>): void {
     if (this.isAnimating) {
       return;
     }
 
-    this.isOpen ? this.close() : this.open();
+    this.isOpen ? this.close() : this.open(options);
   }
 
   private animateIn(): void {
@@ -476,6 +484,18 @@ export class CommandPaletteComponent implements OnInit, OnDestroy {
       tagName === 'select' ||
       target.isContentEditable
     );
+  }
+
+  private shouldAutoFocus(): boolean {
+    if (!isPlatformBrowser(this.platformId)) {
+      return false;
+    }
+
+    const isCoarsePointer = window.matchMedia('(pointer: coarse)').matches;
+    const isSmallViewport = window.matchMedia('(max-width: 768px)').matches;
+    const hasTouch = navigator.maxTouchPoints > 0;
+
+    return !(isCoarsePointer || isSmallViewport || hasTouch);
   }
 
   private lockBodyScroll(): void {
